@@ -22,7 +22,10 @@
 
 /* NAV ITEM */
 .nav__item {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  transition: all 300ms ease;
+}
+.nav__item:hover {
+  color: var(--white) !important;
 }
 
 

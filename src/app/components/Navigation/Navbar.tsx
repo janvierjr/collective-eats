@@ -51,7 +51,8 @@ const Navbar = () => {
                       }}
                       key={menu.text}
                     >
-                      <NavItem active={activeIndex === index} {...menu} />
+                      <NavItem 
+                        active={activeIndex === index} {...menu} />
                     </div>
                   );
                 })}

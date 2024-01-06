@@ -13,8 +13,8 @@ const NavItem = ({text, color, href, active}: NavItemPropTypes) => {
   return (
     <Link href={href}>
       <div
-        className={`nav__item ${active} ? "active" : ""`}
-        style={{ color: color }}
+        className={styles.nav__item}
+        style={{ color }}
         role='menuitem'
       >
         {text}
