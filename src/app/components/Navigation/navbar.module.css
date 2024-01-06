@@ -16,19 +16,9 @@
   width: 40px;
   height: 22px;
   cursor: pointer;
+  z-index: 9999;
 }
 
-.topLine {
-  width: 100%;
-  height: 5px;
-  background-color: var(--black);
-}
-
-.bottomLine {
-  width: 100%;
-  height: 5px;
-  background-color: var(--black);
-}
 
 /* NAV ITEM */
 .nav__item {
@@ -39,10 +29,14 @@
 /* SEARCH BAR */
 .searchContainer {
   position: relative;
+  font-family: inter, sans-serif;
+  font-weight: 600;
+  letter-spacing: .05rem;
   min-width: 600px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .searchInput {
@@ -62,6 +56,5 @@
   }
   .searchInput {
     min-width: calc(250px);
-    margin-right: 10px;
   }
 }

@@ -1,5 +1,11 @@
+
+@font-face {
+  font-family: 'brice';
+  src: url('../../public/fonts/Brice-BlackSemiExpanded.otf');
+}
+
 :root {
-  --max-width: 1280px;
+  --max-width: 1380px;
   --border-radius: 25px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
@@ -14,7 +20,6 @@
   --sky-blue: #A8EDF5;
   --white: white;
 }
-
 
 * {
   box-sizing: border-box;
@@ -34,8 +39,9 @@ a {
 }
 
 .max-container {
-  width: 100%;
-  max-width: 1280px;
+  width: 95%;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* RESET BUTTON + KEEP TAB OUTLINE */
@@ -49,6 +55,71 @@ button {
   padding: 12px 28px;
   border: 4px solid var(--black);
   cursor: pointer;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+.nav__menu.active {
+  display: flex;
+  font-family: brice, sans-serif;
+  font-size: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 600px;
+  min-width: 50%;
+  min-height: calc(100lvh);
+  row-gap: 4rem;
+  transition: all 400ms ease;
+  background-color: var(--black);
+  z-index: 999;
+  right: 0;
+}
+
+.nav__menu {
+  left: -103%;
+}
+
+/* -------- NAV HAMBURGER animation --------- */
+
+.topLine {
+  width: 100%;
+  height: 5px;
+  background-color: var(--black);
+  transition: all 300ms ease ;
+}
+
+.bottomLine {
+  width: 100%;
+  height: 5px;
+  background-color: var(--black);
+  transition: all 300ms ease;
+}
+
+/* hamburgerButton Animation */
+
+.topLine.active {
+  transform: rotate(45deg);
+  margin-top: 10px;
+  background-color: var(--white)
+}
+
+.bottomLine.active {
+  transform: rotate(-45deg);
+  margin-bottom: 10px;
+  background-color: var(--white)
+}
+
+main {
+  margin-top: 4em;
 }
 
 /* TEXT COLORS */
@@ -122,3 +193,8 @@ button {
   background-color: var(--sky-blue);
 }
 
+@media screen and (max-width: 600px) {
+  .nav__menu.active {
+    width: 100%;
+  }
+}
