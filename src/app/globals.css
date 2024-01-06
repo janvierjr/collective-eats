@@ -1,11 +1,20 @@
 :root {
   --max-width: 1280px;
-  --border-radius: 12px;
+  --border-radius: 25px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
+  --orange: #FDC180;
+  --yellow: #E0DD8A;
+  --lime-green: #C0F5A8;
+  --blue: #5897F8;
+  --pink: #DB8AE0;
+  --grey: #BAAEAE;
+  --black: #000000;
+  --sky-blue: #A8EDF5;
+  --white: white;
 }
+
 
 * {
   box-sizing: border-box;
@@ -23,3 +32,93 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.max-container {
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* RESET BUTTON + KEEP TAB OUTLINE */
+button {
+  all: unset;
+  outline: revert;
+}
+
+.button {
+  border-radius: var(--border-radius);
+  padding: 12px 28px;
+  border: 4px solid var(--black);
+  cursor: pointer;
+}
+
+/* TEXT COLORS */
+.txt-white {
+  color: var(--white);
+}
+
+.txt-black {
+  color: var(--black);
+}
+
+.txt-orange {
+  color: var(--orange);
+}
+
+.txt-yellow {
+  color: var(--yellow);
+}
+
+.txt-lime-green {
+  color: var(--lime-green);
+}
+
+.txt-blue {
+  color: var(--blue);
+}
+
+.txt-pink {
+  color: var(--pink);
+}
+
+.txt-grey {
+  color: var(--grey);
+}
+
+.txt-pink {
+  color: var(--pink);
+}
+
+.txt-sky-blue {
+  color: var(--sky-blue);
+}
+
+/* BACKGROUND COLORS */
+
+.bg-black {
+  background-color: var(--black);
+}
+.bg-orange {
+  background-color: var(--orange);
+}
+.bg-yellow {
+  background-color: var(--yellow);
+}
+.bg-lime-green {
+  background-color: var(--lime-green);
+}
+.bg-blue {
+  background-color: var(--blue);
+}
+.bg-pink {
+  background-color: var(--pink);
+}
+.bg-grey {
+  background-color: var(--grey);
+}
+.bg-pink {
+  background-color: var(--pink);
+}
+.bg-sky-blue {
+  background-color: var(--sky-blue);
+}
+
