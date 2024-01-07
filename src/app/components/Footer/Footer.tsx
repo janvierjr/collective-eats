@@ -3,20 +3,17 @@ import styles from './footer.module.css';
 import Logo from './Logo'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { COLOR_LIST } from '@/utils/colorlist';
 
-const FOOTER_COLOR_LIST = [
-  { name: 'orange', color: 'var(--orange)', href: '/' },
-  { name: 'sky-blue', color: 'var(--sky-blue)', href: 'addrecipe' },
-  { name: 'lime-green', color: 'var(--lime-green)', href: 'saverecipe' },
-];
+
 
 const Footer = () => {
   const currentPage = usePathname();
-
+  // console.log('currentPage', currentPage)
   return (
     <footer className={styles.footer}>
       <div className={'max-container flex-col margin-auto flex-center'}>
-        {FOOTER_COLOR_LIST.map(menu => {
+        {COLOR_LIST.map(menu => {
           return (
             currentPage === menu.href && (
                 <Logo key={menu.name}  {...menu} />

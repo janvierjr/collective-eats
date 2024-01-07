@@ -1,14 +1,9 @@
 'use client';
-import styles from './footer.module.css';
 import Link from 'next/link';
+import type { ColorListPropTypes } from '../../../utils/colorlist';
 
-export type LogoPropTypes = {
-  name: string;
-  color: string;
-  href: string;
-};
 
-const Logo = ({ color }: LogoPropTypes) => {
+const Logo = ({ color }: ColorListPropTypes) => {
   return (
     <Link href={'/'}>
       <h3 className={'logo'} style={{ color }} role='menuitem'>

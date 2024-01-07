@@ -1,12 +1,13 @@
 "use client"
 import styles from './navbar.module.css';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import NavItem from './NavItem';
 
 const NAV_MENU_LIST = [
   { text: 'FIND A RECIPE', color: 'var(--orange)', href: '/'},
-  { text: 'ADD A RECIPE', color: 'var(--sky-blue)', href: 'addrecipe' },
-  { text: 'SAVED RECIPES', color: 'var(--lime-green)', href: 'saverecipe' },
+  { text: 'ADD A RECIPE', color: 'var(--sky-blue)', href: '/addrecipe' },
+  { text: 'SAVED RECIPES', color: 'var(--lime-green)', href: '/saverecipe' },
 ];
 
 const Navbar = () => {
@@ -15,12 +16,24 @@ const Navbar = () => {
 
   const handleMenuOpen = () => {
     setActiveNav(!activeNav);
-
   }
+
+  let navStyle = '';
+  const currentPage = usePathname();
+  const checkColor = NAV_MENU_LIST.map((menu) => {
+    if (currentPage === menu.href) {
+      navStyle += menu.color;
+    }
+    }
+  );
+
 
   return (
     <header>
-      <nav className={styles.navigation}>
+      <nav
+        className={styles.navigation}
+        style={{ backgroundColor: `${navStyle}` }}
+      >
         <div className={'max-container'}>
           <div className='nav__menu_wrapper'>
             <button
@@ -29,12 +42,8 @@ const Navbar = () => {
               type='button'
               onClick={handleMenuOpen}
             >
-              <div
-                className={`topLine ${activeNav ? 'active' : ''}`}
-              ></div>
-              <div
-                className={`bottomLine ${activeNav ? 'active' : ''}`}
-              ></div>
+              <div className={`topLine ${activeNav ? 'active' : ''}`}></div>
+              <div className={`bottomLine ${activeNav ? 'active' : ''}`}></div>
             </button>
             {activeNav && (
               <div
@@ -51,8 +60,7 @@ const Navbar = () => {
                       }}
                       key={menu.text}
                     >
-                      <NavItem 
-                        active={activeIndex === index} {...menu} />
+                      <NavItem active={activeIndex === index} {...menu} />
                     </div>
                   );
                 })}
