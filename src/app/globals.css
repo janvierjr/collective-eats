@@ -67,6 +67,11 @@ p {
   font-family: brice, sans-serif;
   font-size: 1.5rem;
   padding: .25rem;
+  transition: all 300ms ease;
+}
+
+.logo:hover {
+  color: var(--white) !important;
 }
 
 /*  -------- RESET BUTTON + KEEP TAB OUTLINE -------- */
