@@ -14,7 +14,8 @@ const Navbar = () => {
   const [activeNav, setActiveNav] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  const handleMenuOpen = () => {
+  const handleMenuOpen = (e: Event) => {
+    e.preventDefault()
     setActiveNav(!activeNav);
   }
 
@@ -40,12 +41,12 @@ const Navbar = () => {
               className={styles.hamburgerButton}
               aria-haspopup='true'
               type='button'
-              onClick={handleMenuOpen}
+              onClick={(e: any) => handleMenuOpen(e)}
             >
               <div className={`topLine ${activeNav ? 'active' : ''}`}></div>
               <div className={`bottomLine ${activeNav ? 'active' : ''}`}></div>
             </button>
-            {activeNav && (
+            {(
               <div
                 className={`nav__menu ${activeNav ? 'active' : ''}`}
                 role='menu'

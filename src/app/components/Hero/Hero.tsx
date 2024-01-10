@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
-  const [heroStyle, setHeroStyle] = useState('var(--lime-green)');
+  const [heroStyle, setHeroStyle] = useState('var(--orange)');
   const [heroTitle, setHeroTitle] = useState('COLLECTIVE EATS')
   const [heroSubTitle, setHeroSubTitle] = useState('YEAH YOU RIGHT!');
   const thisPage = usePathname();
