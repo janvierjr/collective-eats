@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.39.2",
     "next": "14.0.4",
     "react": "^18",
@@ -21,6 +23,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "supabase": "^1.131.3",
     "typescript": "^5"
   }
 }
