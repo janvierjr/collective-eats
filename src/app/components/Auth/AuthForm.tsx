@@ -8,14 +8,32 @@ export default function AuthForm() {
   const supabase = createClientComponentClient<Database>();
 
   return (
-    <Auth
-      supabaseClient={supabase}
-      view='magic_link'
-      appearance={{ theme: ThemeSupa }}
-      theme='dark'
-      showLinks={false}
-      providers={[]}
-      redirectTo='http://localhost:3000/auth/callback'
-    />
+    <>
+      {/** PROD: Change redirectTo property with domain for production*/ }
+      <h2>Please Login</h2>
+      <Auth
+        supabaseClient={supabase}
+        view='magic_link'
+        appearance={{
+          theme: ThemeSupa,
+          style: {
+            button: {
+              background: '#000000',
+              color: 'white',
+              textDecoration: 'bold',
+              borderRadius: 'var(--border-radius)',
+              textTransform: 'uppercase',
+              maxWidth: '15rem'
+            },
+            label: { fontFamily: 'inter', color: '#000000', textTransform: 'uppercase' },
+            anchor: { marginRight: 'auto'}
+          },
+        }}
+        theme='light'
+        showLinks={true}
+        providers={['google']}
+        redirectTo='http://localhost:3000/auth/callback'
+      />
+    </>
   );
 }

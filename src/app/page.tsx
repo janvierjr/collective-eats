@@ -8,7 +8,6 @@ export default function Home() {
         <Hero />
         <main className={styles.main}>
           <div className={'max-container'}>
-            <h2>Here is an h2</h2>
             < AuthForm />
           </div>
         </main>
